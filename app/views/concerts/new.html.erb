@@ -1,0 +1,30 @@
+<div class="test">Add A New Concert</div>
+
+<% if @concert.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@concert.errors.count, "error") %> prohibited this concert from being saved:</h2>
+
+    <ul>
+      <% @concert.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_for(@concert) do |f| %>
+
+    <%= f.label :artist %>
+    <%= f.text_field :artist %>
+
+    <%= f.label :show_date %>
+    <%= f.text_field :show_date %>
+
+    <%= f.label :show_time %>
+    <%= f.text_field :show_time %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+
+  <%= f.submit "Add Concert"%>
+
+<% end %>

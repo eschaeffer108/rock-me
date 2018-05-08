@@ -1,0 +1,15 @@
+<div class="welcome">
+ Upcomming Shows
+</div>
+
+<div class="band_links">
+<% @concerts.each do |concert| %>
+    <li style="list-style-type:none">
+        <%= link_to "#{concert.artist}",concert_path(concert) %>
+    </li>
+    <% end %>
+</div>
+
+<div class="add_new">
+<%= link_to 'Add a Concert', new_concert_path(@Concert) %>
+</div>
