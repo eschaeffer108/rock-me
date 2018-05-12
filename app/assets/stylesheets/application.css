@@ -55,7 +55,14 @@
    font-family: "Hordor";
    font-size: 20px;
    text-align: center;
-   color: white
+   color: white;
+ }
+
+ .comment{
+   font-family: "Heavy Equipment";
+   font-size: 30px;
+   text-align: center;
+   color: red;
  }
 
  .datetime{
@@ -76,4 +83,25 @@
   font-family: "New Rocker";
   color: red;
   font-size: 40px;
+}
+
+.error_explanation{
+  font-family: "Green Fuz";
+  color: green;
+  font-size: 40px;
+}
+
+.error_explanation_title{
+  font-family: "Green Fuz";
+  color: green;
+  font-size: 50px;
+}
+.comment-title{
+  text-align: center;
+  font-family: "Metal Mania";
+  font-size: 70px;
+  color: red;
+}
+.comment-link{
+  text-align: center;
 }

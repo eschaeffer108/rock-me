@@ -1,0 +1,24 @@
+<div class ="test"> Let us know if you plan on attending the show and anything else you may want to add about the band.</div>
+
+<% if @comment.errors.any? %>
+  <div class = "error_explanation">
+    <div class = "error_explanation_title>"<%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</div>
+
+    <ul>
+      <% @comment.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for ([@concert, @comment]) do |f| %>
+<div class = "formtext">
+  <div>
+    <%= f.label :body %>
+    <%= f.text_field :body %>
+ </div>
+</div>
+
+<%= f.submit "Post Comment" %>
+<% end %>

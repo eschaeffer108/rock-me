@@ -1,3 +1,15 @@
     <div class="band_name"> <%= @concert.artist %></div>
     <div class="datetime"> <%= "Date:" %> <%= @concert.show_date %> <%= "Time:" %> <%= @concert.show_time %> </div>
     <div class="description"><%= @concert.description %></div>
+
+    <div class="comment-title"> Comments: </div>
+
+    <% @comments.each do |comment| %>
+    <li><div class = "comment"><%="#{comment.body}"%></div></li>
+    <% end %>
+
+    <div class = "comment-link">
+    <%= link_to "Add a comment or say if you'll be attending this show.", new_concert_comment_path(@concert)%>
+  </div>
+
+    <%= link_to 'Home', concerts_path(@concert) %>
