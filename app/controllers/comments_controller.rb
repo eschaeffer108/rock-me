@@ -11,7 +11,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    binding.pry
     @concert = Concert.find(params[:concert_id])
     @comment = Comment.new(comment_params)
     @comment.concert = @concert

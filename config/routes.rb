@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'concerts#index'
+  root 'static_pages#index'
   devise_for :users
   resources :concerts do
     resources :comments

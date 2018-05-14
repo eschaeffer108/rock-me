@@ -10,12 +10,10 @@ class ConcertsController < ApplicationController
 
   def create
     @concert = Concert.new(concert_params)
-    binding.pry
     if @concert.save
     flash[:notice] = "Concert added successfully"
     redirect_to @concert
     else
-      binding.pry
       render action: "new"
     end
   end

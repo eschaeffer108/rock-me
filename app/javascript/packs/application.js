@@ -9,16 +9,13 @@
 
 console.log("Hello World from Webpacker")
 
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from '../react/containers/App';
 
 document.addEventListener('DOMContentLoaded', () => {
-  let reactElement = document.getElementById('app')
-
-  if (reactElement) {
-    ReactDOM.render(
-      <h1>Boo yaa</h1>,
-      reactElement
-    )
-  }
+  ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+  )
 })
