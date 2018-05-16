@@ -15,8 +15,8 @@
  *= require foundation_and_overrides
 
 
-  /* body {
-  background: black;
+   body {
+
   height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -26,82 +26,66 @@
  .welcome{
  	font-size: 75px;
  	text-align: center;
-  font-family: "Iron Maiden";
-  color: red;
+
  }
 
  .band_links{
-   font-family: "New Rocker";
+
    font-size: 60px;
    text-align: center;
-   color: blue;
+
  }
 
  .add_new{
-   font-family: "The Juke Box";
+
    font-size: 70px;
    text-align: center;
    bottom: 0px;
  }
 
  .band_name{
-   font-family: "New Rocker";
    font-size: 75px;
    text-align: center;
-   color: red;
  }
 
  .description{
-   font-family: "Hordor";
    font-size: 20px;
    text-align: center;
-   color: white;
  }
 
  .comment{
-   font-family: "Heavy Equipment";
    font-size: 30px;
    text-align: center;
-   color: red;
  }
 
  .datetime{
-   font-family: "Hordor";
    font-size: 40px;
    text-align: center;
-   color: white;
  }
 
  .formtext{
-   background: white;
-   font-family: "Hordor";
    font-size: 15px;
-   color: white;
  }
 
 .test{
-  font-family: "New Rocker";
-  color: red;
+
   font-size: 40px;
 }
 
 .error_explanation{
-  font-family: "Green Fuz";
-  color: green;
+
   font-size: 40px;
 }
 
 .error_explanation_title{
-  font-family: "Green Fuz";
-  color: green;
+
   font-size: 50px;
 }
 .comment-title{
   text-align: center;
-  font-family: "Metal Mania";
   font-size: 70px;
-  color: red;
+
 }
 .comment-link{
   text-align: center;
-} */
+}
