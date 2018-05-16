@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import CommentShow from '../components/CommentShow';
+import CommentFromContainer from '../containers/CommentFormContainer';
 
 class CommentShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      article: {}
+      comments: {}
     }
   }
 

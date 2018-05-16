@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const TitleField = (props) => {
+const CommentTitleField = (props) => {
   return (
     <label>{props.label}
       <input
@@ -14,4 +14,4 @@ const TitleField = (props) => {
   );
 }
 
-export default TitleField;
+export default CommentTitleField;

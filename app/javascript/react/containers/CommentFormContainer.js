@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import TitleField from '../components/TitleField';
-import BodyField from '../components/BodyField';
+import CommentBodyField from '../components/CommentBodyField';
+import CommentTitleField from '../components/CommentTitleField';
 
 class CommentFormContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      commentTitle: '',
-      commentBody: '',
+      commentTitle:'',
+      commentBody:'',
       error: null
     }
 
@@ -25,17 +25,17 @@ class CommentFormContainer extends Component {
     }
 
     handleTitleChange(event) {
-      this.setState({articleTitle: event.target.value})
+      this.setState({commentTitle: event.target.value})
     }
 
     handleBodyChange(event){
-      this.setState({articleBody: event.target.value})
+      this.setState({commentBody: event.target.value})
     }
 
     handleSubmitForm(event){
       event.preventDefault()
-      if (this.state.commentBody === ""){
-        this.setState({error: "Please fill out a comment!"})
+      if (this.state.commentTitle === "" || this.state.commentBody === ""){
+        this.setState({error: "Please fill out all fields!"})
       } else {
         let formPayload = {
           title: this.state.commentTitle,
@@ -48,8 +48,15 @@ class CommentFormContainer extends Component {
   render() {
     return(
       <form onSubmit={this.handleSubmitForm}>
+      
         <p>{this.state.error}</p>
-        <BodyField
+        <CommentTitleField
+          content={this.state.commentTitle}
+          label = "Comment Title"
+          name = "comment-title"
+          handlerFunction ={this.handleTitleChange}
+        />
+        <CommentBodyField
           content={this.state.commentBody}
           label="Comment Body"
           name="comment-body"

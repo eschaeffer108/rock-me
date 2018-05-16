@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
 import CommentTile from '../components/CommentTile';
 import CommentFormContainer from '../containers/CommentFormContainer';
+import CommentTitleField from '../components/CommentTitleField';
+import CommentBodyField from '../components/CommentBodyField';
 
 class CommentsIndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      comments: []
+      comments: [],
+      commentTitle:'',
+      commentBody:'',
+      error: null
     }
-    this.addNewComment = this.addNewComment.bind(this)
+    this.toggleCommentSelect=this.toggleCommentSelect.bind(this)
+    this.handleTitleChange=this.handleTitleChange.bind(this)
+    this.handleBodyChange=this.handleBodyChange.bind(this)
+    this.handleSubmitForm=this.handleSubmitForm.bind(this)
   }
+    toggleCommentSelect(id) {
+      if (id === this.state.selectedComment) {
+        this.setState({ selectedComment: null})
+      } else {
+        this.setState({ selectedComment: id})
+      }
+    }
+
 
   componentDidMount() {
-    fetch('/api/v1/comments')
+    fetch(`/api/v1/concerts/${concertId}comments/new.json`)
     .then(response => {
       if (response.ok) {
         return response;
@@ -27,8 +43,33 @@ class CommentsIndexContainer extends Component {
       this.setState({comments: response})
     })
   }
-  addNewComment(formPayload) {
-    fetch('api/v1/comments', {
+
+  toggleCommentSelect(id) {
+    if (id === this.state.selectedComment) {
+      this.setState({ selectedComment: null})
+    } else {
+      this.setState({ selectedComment: id})
+    }
+  }
+
+  handleTitleChange(event) {
+    this.setState({commentTitle: event.target.value})
+  }
+
+  handleBodyChange(event){
+    this.setState({commentBody: event.target.value})
+  }
+
+  handleSubmitForm(event){
+    event.preventDefault()
+    if (this.state.commentTitle === "" || this.state.commentBody === ""){
+      this.setState({error: "Please fill out all fields!"})
+    } else {
+      let formPayload = {
+        title: this.state.commentTitle,
+        body: this.state.commentBody
+      }
+    fetch(`/api/v1/concerts/${concertId}comments/new.json`, {
       method: 'POST',
       body: JSON.stringify(formPayload)
     })
@@ -36,6 +77,7 @@ class CommentsIndexContainer extends Component {
     .then(body => {
       this.setState({comments: this.state.comments.concat(body)})
     })
+  }
   }
 
   render() {
@@ -59,10 +101,28 @@ class CommentsIndexContainer extends Component {
           <h1>Comments</h1>
           <hr/>
           {comments}
-          <CommentFormContainer addNewComment={this.addNewComment}/>
+          <form className='newComment'onSubmit={this.handleSubmitForm}>
+            <p className='error'>{this.state.error}</p>
+            <CommentTitleField
+              label="Comment Title"
+              name="comment-title"
+              content={this.state.commentTitle}
+              handlerFunction ={this.handleTitleChange}
+            />
+            <CommentBodyField
+              label="Comment Body"
+              name="comment-body"
+              content={this.state.commentBody}
+              handlerFunction={this.handleBodyChange}
+            />
+
+            <div>
+              <input className="button" type="submit" value="Submit"/>
+            </div>
+          </form>
         </div>
       </div>
-    )
+      )
   }
 }
 
