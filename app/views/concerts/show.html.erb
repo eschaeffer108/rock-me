@@ -3,9 +3,8 @@
     <div class="description"><%= @concert.description %></div>
 
     <div class="comment-title"> Comments: </div>
-
     <% @comments.each do |comment| %>
-    <li><div class = "comment"><%="#{comment.title}"%></div></li>
+    <li style="list-style-type:none"><div class = "comment"><%="#{comment.body}"%></div></li>
     <% end %>
 
     <div class = "comment-link">
@@ -13,4 +12,4 @@
 
   </div>
 
-    <%= link_to 'Home', concerts_path(@concert) %>
+    <%= link_to 'Back to Concerts', concerts_path(@concert) %>

@@ -26,24 +26,6 @@ class CommentsIndexContainer extends Component {
       }
     }
 
-
-  componentDidMount() {
-    fetch(`/api/v1/concerts/${concertId}comments/new.json`)
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`
-          error = new Error(errorMessage)
-        throw(error)
-      }
-    })
-    .then(response => response.json())
-    .then(response => {
-      this.setState({comments: response})
-    })
-  }
-
   toggleCommentSelect(id) {
     if (id === this.state.selectedComment) {
       this.setState({ selectedComment: null})
@@ -61,6 +43,7 @@ class CommentsIndexContainer extends Component {
   }
 
   handleSubmitForm(event){
+    let id = this.props.params.id
     event.preventDefault()
     if (this.state.commentTitle === "" || this.state.commentBody === ""){
       this.setState({error: "Please fill out all fields!"})
@@ -69,7 +52,7 @@ class CommentsIndexContainer extends Component {
         title: this.state.commentTitle,
         body: this.state.commentBody
       }
-    fetch(`/api/v1/concerts/${concertId}comments/new.json`, {
+    fetch(`api/v1/concerts/${id}`, {
       method: 'POST',
       body: JSON.stringify(formPayload)
     })
