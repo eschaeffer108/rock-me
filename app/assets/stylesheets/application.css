@@ -1,40 +1,31 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- *= require foundation_and_overrides
 
- /
-  body {
-  background: black;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 
+
+ body {
+   background-color: #00FFFF;
+   border: 1px solid #ccc;
+   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+   padding: 4px 6px;
+   margin-bottom: 10px;
+   color: #555;
+   vertical-align: middle;
+   border-radius: 4px;
+   max-width: 100%;
+ }
+
+ .home_page{
+   text-align: center;
+ }
 
  .welcome{
+  font-family: "Rockwell";
  	font-size: 75px;
  	text-align: center;
-  font-family: "Iron Maiden";
-  color: red;
  }
 
  .band_links{
-   font-family: "New Rocker";
    font-size: 60px;
    text-align: center;
-   color: blue;
  }
 
  .add_new{
@@ -45,62 +36,44 @@
  }
 
  .band_name{
-   font-family: "New Rocker";
    font-size: 75px;
    text-align: center;
-   color: red;
  }
 
  .description{
-   font-family: "Hordor";
+   font-family: "Rockwell Extra Bold"
    font-size: 20px;
    text-align: center;
-   color: white;
  }
 
  .comment{
-   font-family: "Heavy Equipment";
    font-size: 30px;
    text-align: center;
-   color: red;
  }
 
  .datetime{
-   font-family: "Hordor";
    font-size: 40px;
    text-align: center;
-   color: white;
  }
 
  .formtext{
-   background: white;
-   font-family: "Hordor";
-   font-size: 15px;
-   color: white;
+   font-size: 20px;
  }
 
 .test{
-  font-family: "New Rocker";
-  color: red;
   font-size: 40px;
 }
 
 .error_explanation{
-  font-family: "Green Fuz";
-  color: green;
-  font-size: 40px;
+  font-size: 15px;
 }
 
 .error_explanation_title{
-  font-family: "Green Fuz";
-  color: green;
   font-size: 50px;
 }
 .comment-title{
   text-align: center;
-  font-family: "Metal Mania";
   font-size: 70px;
-  color: red;
 }
 .comment-link{
   text-align: center;

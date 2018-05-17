@@ -1,5 +1,5 @@
-class Api::ConcertsController <ApiController
-  def show 
+class Api::V1::ConcertsController < ApiController
+  def show
     render json: { concert: Concert.all }
   end
 

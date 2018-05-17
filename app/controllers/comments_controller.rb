@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   def index
     @comments = Comment.all
   end
-  #
+
   # def new
   #   @concert = Concert.find(params[:concert_id])
   #   @comment = Comment.new
