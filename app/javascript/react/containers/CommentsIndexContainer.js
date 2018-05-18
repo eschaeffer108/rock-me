@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CommentTile from '../components/CommentTile';
-import CommentFormContainer from '../containers/CommentFormContainer';
 import CommentTitleField from '../components/CommentTitleField';
 import CommentBodyField from '../components/CommentBodyField';
 
@@ -43,7 +42,7 @@ class CommentsIndexContainer extends Component {
   }
 
   handleSubmitForm(event){
-    let id = this.props.params.id
+    let concert_id = this.props.params.id
     event.preventDefault()
     if (this.state.commentTitle === "" || this.state.commentBody === ""){
       this.setState({error: "Please fill out all fields!"})
@@ -52,18 +51,24 @@ class CommentsIndexContainer extends Component {
         title: this.state.commentTitle,
         body: this.state.commentBody
       }
-    fetch(`api/v1/concerts/${id}`, {
+
+    fetch(`/api/v1/concerts/${concert_id}/comments`, {
+      credentials: 'same-origin',
       method: 'POST',
-      body: JSON.stringify(formPayload)
+      body: JSON.stringify(formPayload),
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({comments: this.state.comments.concat(body)})
+      console.log("successful!")
+      window.location.href = `/concerts/${concert_id}`
+      // this.setState({comments: this.state.comments.concat(body.comment)})
     })
   }
   }
 
   render() {
+    // debugger;
     let comments = this.state.comments.map(comment => {
       let selected;
       if (this.state.selectedComment === comment.id){
@@ -78,12 +83,12 @@ class CommentsIndexContainer extends Component {
         />
       )
     })
+
     return(
       <div className="row">
         <div className="small-8 small-centered-columns">
-          <h1>Comments</h1>
+          <h1>Add a New Comment!</h1>
           <hr/>
-          {comments}
           <form className='newComment'onSubmit={this.handleSubmitForm}>
             <p className='error'>{this.state.error}</p>
             <CommentTitleField
