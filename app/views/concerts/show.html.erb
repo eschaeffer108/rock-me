@@ -1,15 +1,21 @@
+  <div class = "info">
     <div class="band_name"> <%= @concert.artist %></div>
     <div class="datetime"> <%= "Date:" %> <%= @concert.show_date %> <%= "Time:" %> <%= @concert.show_time %> </div>
+  </div>
     <div class="description"><%= @concert.description %></div>
 
-    <div class="comment-title"> Comments: </div>
+  <div class = "comment-boarder">
+    <div class="comments"> Comments: </div>
     <% @comments.each do |comment| %>
     <li style="list-style-type:none"><div class = "comment"><%="#{comment.body}"%></div></li>
     <% end %>
+  </div>  
 
     <div class = "comment-link">
-    <%= link_to "Add a comment or say if you'll be attending this show.", new_concert_comment_path(@concert)%>
+    <%= link_to "Add a comment or say if you'll be attending this show", new_concert_comment_path(@concert)%>
 
   </div>
 
+  <div class = "back-button">
     <%= link_to 'Back to Concerts', concerts_path(@concert) %>
+  </div>

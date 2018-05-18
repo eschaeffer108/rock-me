@@ -11,7 +11,6 @@ class Api::V1::CommentsController < ApiController
     @comment = Comment.new(comment_params)
     @comment.concert = @concert
     @comment.user_id = current_user.id
-    binding.pry
     if @comment.save
         flash[:notice] = "Comment added successfully"
         redirect_to @concert
