@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
   root 'homes#index'
   devise_for :users
-  resources :concerts do
-    resources :comments
+  resources :concerts, only: [:create, :new, :index, :show] do
+    resources :comments, only: [:create, :new, :show]
   end
 
 
   namespace :api do
     namespace :v1 do
       resources :concerts do
-        resources :comments, only: [:create]
+        resources :comments, only: [:create, :new, :show]
       end
     end
   end
