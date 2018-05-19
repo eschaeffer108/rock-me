@@ -18,6 +18,7 @@
    background-color: #ffd700;
    text: white;
    padding-top: 15px;
+   padding-bottom: 5px;
  }
 
  .right{
@@ -45,6 +46,7 @@
   font-family: "Rockwell";
  	font-size: 75px;
  	text-align: center;
+  padding-top: 20px;
  }
 
  .band_links{
@@ -82,6 +84,7 @@
    border: 1px solid black;
    border-radius: 4px;
    margin-top: 20px;
+   padding-left: 10px;
  }
 
  .datetime{
@@ -90,12 +93,15 @@
  }
 
  .formtext{
+   padding-top: 20px;
+   text-align: center;
    font-size: 20px;
  }
 
-.test{
+.add-concert{
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
+  padding-top: 20px;
 }
 
 .error_explanation{
@@ -128,4 +134,27 @@
 .comment-boarder{
   border-spacing: 20px;
   border: 5px solid black;
+}
+
+.submit{
+  padding-top: 40px;
+  text-align: center;
+}
+
+.sign-in{
+  padding-bottom: 5px;
+}
+
+.comment-form{
+  text-align: center;
+}
+
+.comment-form-title{
+  padding-top: 20px;
+  font-size: 30px;
+  padding-top: 20px;
+}
+
+.commentitle{
+  padding-bottom: 50px;
 }

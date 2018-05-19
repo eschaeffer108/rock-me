@@ -1,6 +1,6 @@
 users = User.create!([
     {username: "TheKraken", first_name: "Eric", last_name: "Schaeffer", email: "eschaeffer108@gmail.com", date_of_birth: Date.new(06-11-1991), password: "jaspercat", user: true, admin: true},
-    {username: "Diogodofmetal", first_name: "Ronniie James", last_name: "Dio", email: "dio@metal.com", date_of_birth: Date.new(07-10-1942), password: "password", user: true, admin: true}
+    {username: "Diogodofmetal", first_name: "Ronnie James", last_name: "Dio", email: "dio@metal.com", date_of_birth: Date.new(07-10-1942), password: "password", user: true, admin: true}
   ])
 
 concerts = Concert.create!([
@@ -16,7 +16,7 @@ concerts = Concert.create!([
       {artist: "Man o'War", show_date: "10-21-2018", show_time: "8:30", description: "If you're a fan of folk/medieval metal like Iron Maiden and Dio you'll probalby like Man o'War!"},
       {artist: "Tenacious D", show_date: "11-05-2018", show_time: "7:00", description: "That's right Jables and Kage are doing their first major tour in years! Could they be doing new songs from an album they may or may not be working on? Only one way to find out!"},
       {artist: "The Who", show_date: "11-21-2018", show_time: "7:00", description: "Come see the greatest band in the world, with original members Roger Daltrey and Pete Townshend! Plus Pete's brother Simon on rhythm guitar, and Ringo Starr's son, Zak Starkey, on Drums!"},
-      {artist: "Sons of Cream", show_date: "12-05-2018", show_time: "7:30", description: "Come see the offspring of Cream carry on their father's legacy. You've got Jack Bruce's son Malcolm on bass and vocals, Ginger Baker's son Kofi on drums, and Eric Clapton's Nephew Will Johns on Guitar!"}
+      {artist: "Sons of Cream", show_date: "12-05-2018", show_time: "7:30", description: "Come see the offspring of Cream carry on their fathers' legacy. You've got Jack Bruce's son Malcolm on bass and vocals, Ginger Baker's son Kofi on drums, and Eric Clapton's Nephew Will Johns on Guitar!"}
   ])
 
 comments = Comment.create!([
@@ -31,7 +31,7 @@ comments = Comment.create!([
         {title: "Yes this is a real band", body: "Yes they are real and they are great. The lead singer sounds just like Ozzy, and all their songs are just fast food parodies of Black Sabbath songs. Plus you've got the bassist dressed as Grimmace, the Guitarist is Mayor McCheese, and the Hamburglar is on drums.", concert_id: 9, user_id: 1},
         {title: "Alice Cooper Rules!", body: "I love Alice Cooper! Seen him several times and am going to this one too. Unfortunately I've invited two different friends and they both bailed so it looks like I'm going alone. I'd love to meet up with someone and grab a beer or something before the show though.", concert_id: 8, user_id: 1},
         {title: "I'll be there", body: "I too am going to the show alone but always love chatting with fellow Alice fans. What time do you think you'll arrive?", concert_id: 8, user_id: 1},
-        {title: "Cool", body: "Awesome I'd love to meet you there. The show starts at eight, but I'm planning on getting there around 6:30-7", concert_id: 8, user_id: 1},
+        {title: "Cool", body: "Awesome I'd love to meet you there. The show starts at eight, but I'm planning on getting there around 6:30-7.", concert_id: 8, user_id: 1},
         {title: "Sounds like a plan!", body: "Alright cool, why don't we meet by the entrance around 7 and we can get something to eat and a beer or something before Alice takes the stage", concert_id: 8, user_id: 1},
         {title: "Sounds good to me!", body: "Yeah sounds cool I'll see you at the show!", concert_id: 8, user_id: 1},
         {title: "No way! Are they really touring?", body: "Whoa Tenacious D is actually doing a tour?! I'd love to see this I'm a big fan. I can't believe they're actually touring again.", concert_id: 11, user_id: 1},
@@ -40,7 +40,7 @@ comments = Comment.create!([
         {title: "Last tour huh?", body: "Hmm I seem to recall him claiming this back in the early 90s, I guess it could be legit this time though.", concert_id: 7, user_id: 1},
         {title: "It probably is legit", body: "Yeah I am more inclined to believe it this time. Ozzy is old and Black Sabbath already officially broke up.", concert_id: 7, user_id: 1},
         {title: "Could be legit", body: "I think what Ozzy said is this will be the last time he's gonna do a full scale tour but he didn't rule out doing the occasional one off show.", concert_id: 7, user_id: 1},
-        {title: "I don't know about these guys", body: "These guys are not their father's so I'm hesitant to see them.", concert_id: 13, user_id: 1},
+        {title: "I don't know about these guys", body: "These guys are not their fathers so I'm hesitant to see them.", concert_id: 13, user_id: 1},
         {title: "They're not Cream", body: "If you consider it more of a tribute band, than a Cream clone you might enjoy it. They definitely do their dads' songs justice, but yeah it's not the real thing.", concert_id: 13, user_id: 1},
         {title: "You think they'll play Roll With the Changes?", body: "Not the biggest REO fan in the world but I do love Roll With the Changes because of Scott Zolak I'd be willing to check them out.", concert_id: 4, user_id: 1},
         {title: "They'll probably play Roll With the Changes", body: "Yeah man they usually do Roll With the Changes as their last song. They've got other good songs too. I'm going with a couple of mates, but if you're interested you're welcome to join us.", concert_id: 4, user_id: 1},
@@ -50,6 +50,6 @@ comments = Comment.create!([
         {title: "I'm in", body: "I love Metallica but my friends don't care much for metal music. I'd love to go with some hardcore fans!", concert_id: 5, user_id: 1},
         {title: "Count me in", body: "Yes! I was hoping to find people who'd wanna see this!", concert_id: 5, user_id: 1},
         {title: "Sounds good", body: "I always catch Metallica when they come round this way, but my regular concert buddies are all busy so I'd be down", concert_id: 5, user_id: 1},
-        {title: "Perfect", body: "Alright great, sounds like we've got a good group going. Why don't we all meet by the entrance around seven?’", concert_id: 5, user_id: 1},
+        {title: "Perfect", body: "Alright great, sounds like we've got a good group going. Why don't we all meet by the entrance around seven?", concert_id: 5, user_id: 1},
         {title: "Great", body: "Sounds like a plan! I look forward to meeting you all!", concert_id: 5, user_id: 1}
     ])
