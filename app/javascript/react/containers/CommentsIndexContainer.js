@@ -85,26 +85,29 @@ class CommentsIndexContainer extends Component {
     })
 
     return(
-      <div className="row">
+      <div className="comment-form">
         <div className="small-8 small-centered-columns">
-          <h1>Add a New Comment!</h1>
-          <hr/>
+          <div className="comment-form-title">Add a New Comment</div>
+
           <form className='newComment'onSubmit={this.handleSubmitForm}>
             <p className='error'>{this.state.error}</p>
-            <CommentTitleField
-              label="Comment Title"
-              name="comment-title"
-              content={this.state.commentTitle}
-              handlerFunction ={this.handleTitleChange}
-            />
+          <div className="formtext">
+            <div className="commentitle">
+              <CommentTitleField
+                label="Comment Title "
+                name="comment-title"
+                content={this.state.commentTitle}
+                handlerFunction ={this.handleTitleChange}
+              />
+            </div>
             <CommentBodyField
-              label="Comment Body"
+              label="Comment Body "
               name="comment-body"
               content={this.state.commentBody}
               handlerFunction={this.handleBodyChange}
             />
-
-            <div>
+          </div>
+            <div className="submit">
               <input className="button" type="submit" value="Submit"/>
             </div>
           </form>
