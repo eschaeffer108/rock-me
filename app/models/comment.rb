@@ -3,5 +3,4 @@ class Comment < ApplicationRecord
   validates :title, presence: true
   belongs_to :user
   belongs_to :concert
-  has_many :replies 
 end
